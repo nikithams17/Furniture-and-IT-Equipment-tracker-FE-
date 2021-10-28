@@ -1,0 +1,33 @@
+<div class="col-md-6 offset-md-3">
+    <h3>Update Delivery Date</h3>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label>Employee ID </label>
+            <input type="text" class="form-control" id="employeeID"
+            required [(ngModel)] = "vendor.emp_id" name="employeeID" disabled="disabled" >
+        </div>
+
+        <div class="form-group">
+            <label> Furniture </label>
+            <input type="text" class="form-control" id="furnitures"
+            required [(ngModel)] = "vendor.furniture" name="furnitures" disabled="disabled">
+        </div>
+
+        <div class="form-group">
+            <label> IT Equipment </label>
+            <input type="text" class="form-control" id="ITEquipment"
+            required [(ngModel)] = "vendor.it_equip" name="ITEquipment" disabled="disabled">
+        </div>
+
+        <div class="form-group">
+            <label>Delivery Date</label>
+            <input type="date" class="form-control" id="deliveryDate" [min]="cValue" max="2030-12-31"
+            required [(ngModel)] = "vendor.delivery_date" name="deliveryDate">
+        </div>
+        <br>
+        <div>
+            <button class="btn btn-success" type="reset" style="margin-right: 10%;">Reset</button>
+            <button class="btn btn-success" type="submit">Submit</button>
+        </div>
+    </form>
+</div>

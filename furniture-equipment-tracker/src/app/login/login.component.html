@@ -1,7 +1,7 @@
 <div style="min-width: 100%; min-height: 200%; background-image: url('');">
     <br>
     <div class="container" style="max-width: 600px; background-color: aliceblue;">
-    <form ngForm #loginform (ngSubmit)="loginUser()">
+        <form #loginform="ngForm" (ngSubmit)="loginUser(loginform.value.username,loginform.value.password)">
         <small class="text-danger">{{msg}}</small>
         <div class="form-group">
         <label for="username">Username</label>

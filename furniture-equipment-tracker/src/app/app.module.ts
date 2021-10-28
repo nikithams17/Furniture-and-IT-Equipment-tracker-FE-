@@ -8,13 +8,17 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { LoginsuccessComponent } from './loginsuccess/loginsuccess.component';
+import { VendorComponent } from './vendor/vendor.component';
+import { VendorUpdateComponent } from './vendor-update/vendor-update.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegistrationComponent,
-    LoginsuccessComponent
+    LoginsuccessComponent,
+    VendorComponent,
+    VendorUpdateComponent
   ],
   imports: [
     BrowserModule,

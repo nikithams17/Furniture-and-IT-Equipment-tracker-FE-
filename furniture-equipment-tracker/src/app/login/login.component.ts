@@ -16,13 +16,21 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  loginUser(){
-    this._service.loginUserFromRemote(this.user).subscribe(
-      data =>{
-        console.log("response received");
-        this._router.navigate(['/loginsuccess'])
+  loginUser(username:string,password:string){
+    this._service.loginUserFromRemote().subscribe(
+      res =>{
+        const use=res.find((a:any)=>{
+          return a.username===username && a.password===password;
+        })
+        if(use){
+          alert("Login is successfull")
+          this._router.navigate(['/loginsuccess'])
+        }
+        else{
+          alert("username and password not found");
+        }
       },
-      error=>{
+      ()=>{
         console.log("Exception occured");
         this.msg="Bad credentials, please enter valid username and password";
       }  
